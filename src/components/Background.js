@@ -1,18 +1,10 @@
-"use client";
+"use client";;
 import { gridAni } from "@/constants/constants";
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
 const Background = () => {
   const hor = 14;
   const ver = 20;
-
-  let ref = useRef();
-  let { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  let y1 = useTransform(scrollYProgress, [0, 1], ["0%", "70%"]);
 
   return (
     <>
@@ -22,9 +14,9 @@ const Background = () => {
         {[...Array(hor)].map((e, i) => (
           <motion.div
             variants={gridAni}
-            initial={'hiddem'}
-            animate={'visible'}
-            transition={ {
+            initial={"hiddem"}
+            animate={"visible"}
+            transition={{
               duration: 2,
               delay: 0.05 + i / 10,
               ease: "easeInOut",
@@ -32,7 +24,6 @@ const Background = () => {
             id="row"
             className={`gridLines`}
             key={i}
-            style={{y:y1}}
           ></motion.div>
         ))}
       </div>

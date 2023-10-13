@@ -1,9 +1,9 @@
 "use client";
+import { Sora, Hanken_Grotesk } from "next/font/google";
+import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Parallax from "@/components/Parallax";
-import { Sora, Hanken_Grotesk } from "next/font/google";
-import { useEffect } from "react";
 
 const sora = Sora({
   weight: "400",

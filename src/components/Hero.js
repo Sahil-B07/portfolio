@@ -1,8 +1,8 @@
-import React from "react";
-import Cursor from "./Cursor";
+import { hero } from "@/constants/constants";
 import { motion } from "framer-motion";
 import useIntersection from "@/utils/useIntersection";
-import { hero } from "@/constants/constants";
+
+import Cursor from "./Cursor";
 
 const Hero = ({ myFont }) => {
   Cursor();
