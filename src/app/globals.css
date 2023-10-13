@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.text-stroke-3 {
+  text-shadow: 4px 2px rgb(247, 0, 255);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* cursor */
+#blob {
+  height: 30vmax;
+  aspect-ratio: 1.5;
+  position: fixed;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  animation: rotate 20s infinite;
+  opacity: 0.4;
+  filter: blur(95px);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* grid background */
+.magicpattern {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("/hero-bg.svg");
+}
+
+/* scroll-bar */
+
+body::-webkit-scrollbar {
+  width: 1px;
+  background-color: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+/* navbar */
+Link {
+  @apply cursor-pointer;
 }
