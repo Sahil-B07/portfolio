@@ -1,18 +1,28 @@
-"use client";
-import { Sora, Hanken_Grotesk } from "next/font/google";
+"use client";;
+import { Sora, Hanken_Grotesk, Kalam, Kaisei_Opti } from "next/font/google";
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Parallax from "@/components/Parallax";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
 
 const sora = Sora({
   weight: "400",
   subsets: ["latin"],
 });
 const hanken = Hanken_Grotesk({
+  weight: "variable",
+  subsets: ["latin"],
+});
+const kalam = Kalam({
   weight: "400",
   subsets: ["latin"],
 });
+const kaisei = Kaisei_Opti({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 
 export default function Home() {
   useEffect(() => {
@@ -29,9 +39,10 @@ export default function Home() {
 
   return (
     <>
-      <Navbar myFont={{ sora }}/>
+      <Navbar myFont={{ sora, kalam }}/>
       <Hero myFont={{ sora, hanken }} />
-      <Parallax />
+      <About myFont={{ sora, hanken }}/>
+      <Contact myFont={{ sora, hanken, kaisei }}/>
     </>
   );
 }

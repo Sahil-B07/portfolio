@@ -9,7 +9,10 @@ const Hero = ({ myFont }) => {
   const inViewport = useIntersection();
 
   return (
-    <section id="hero" className="h-screen w-full p-4 flex magicpattern">
+    <section
+      id="hero"
+      className="h-screen w-full p-4 flex relative magicpattern"
+    >
       {/* custom cursor */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -20,17 +23,21 @@ const Hero = ({ myFont }) => {
           inViewport ? "visible" : "hidden"
         }`}
       ></motion.div>
-      {/*  */}
-      <div className="flex h-full p-2 z-10">
-        <div id="info" className="col-span-full flex p-2 w-full">
-          <div className="mt-[25%] ml-[10%]" data-scroll data-scroll-speed='0.2' >
-            <h1 className="text-[4rem]">
-              <span className={myFont.sora.className}>{hero.name}</span>
-            </h1>
-            <p className={`${myFont.sora.className}`}>{hero.desc}</p>
-          </div>
+      {/* description */}
+      <div className="flex h-screen w-full p-2 z-10">
+        <div
+          id="info"
+          data-scroll
+          data-scroll-speed="0.2"
+          className="col-span-full self-center text-center p-2 w-full justify-center"
+        >
+          <h1 className="text-[4rem]">
+            <span className={myFont.sora.className}>{hero.name}</span>
+          </h1>
+          <p className={`${myFont.hanken.className} text-lg`}>{hero.desc} <span className="font-mono">:)</span> </p>
         </div>
       </div>
+      <div className="w-full h-full bg-gradient-to-t from-white absolute bottom-0 left-0"></div>
     </section>
   );
 };

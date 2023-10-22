@@ -5,7 +5,7 @@ const useIntersection = () => {
   useEffect(() => {
     const hero = document.getElementById("hero");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > hero.offsetTop + hero.offsetHeight) {
+      if (window.scrollY > hero.offsetTop + hero.offsetHeight - 300) {
         setIsVisible(false);
       } else if (
         (window.scrollY < hero.offsetTop + hero.offsetHeight) &
