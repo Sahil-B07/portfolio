@@ -1,10 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 const Cursor = () => {
-    if (typeof window !== "undefined") {
-        const blob = document.getElementById("blob");
-    
-        useEffect(() => {
+  useEffect(() => {
+        if (typeof window !== "undefined") {
+          const blob = document.getElementById("blob");
           window.onpointermove = (event) => {
             const { clientX, clientY } = event;
             blob?.animate(
@@ -13,10 +12,10 @@ const Cursor = () => {
                 top: `${clientY}px`,
               },
               { duration: 20000, fill: "forwards" }
-            );
-          };
-        }, []);
-      }
+              );
+            };
+          }
+      },);
 }
 
 export default Cursor
