@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
-import Contact from "@/components/Contact";
+import Contact from "@/components/Projects";
 
 const sora = Sora({
   weight: "400",
